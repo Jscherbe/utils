@@ -1,0 +1,31 @@
+{
+  "name": "@ulu/utils",
+  "version": "0.0.1",
+  "description": "Low level utility library",
+  "keywords": [
+    "array",
+    "Utilities"
+  ],
+  "author": "Joseph Scherben <jscherbe@gmail.com>",
+  "homepage": "https://github.com/Jscherbe/utils#readme",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+  },
+  "exports": {
+    "./lib/*.js": "./*js",
+    "./lib/browser/*.js": "./browser/*js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jscherbe/utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jscherbe/utils/issues"
+  },
+  "devDependencies": {
+    "docdash": "^2.0.2",
+    "jsdoc": "^4.0.2"
+  }
+}

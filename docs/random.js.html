@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>random.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-array.html">array</a><ul class='methods'><li data-type='method'><a href="module-array.html#.arrayAssign">arrayAssign</a></li><li data-type='method'><a href="module-array.html#.arrayCreate">arrayCreate</a></li><li data-type='method'><a href="module-array.html#.arrayHas">arrayHas</a></li><li data-type='method'><a href="module-array.html#.offsetFindIndexOf">offsetFindIndexOf</a></li><li data-type='method'><a href="module-array.html#.removeArrayElement">removeArrayElement</a></li></ul></li><li><a href="module-browser_dom.html">browser/dom</a><ul class='methods'><li data-type='method'><a href="module-browser_dom.html#.composeElement">composeElement</a></li><li data-type='method'><a href="module-browser_dom.html#.createElementFromHtml">createElementFromHtml</a></li><li data-type='method'><a href="module-browser_dom.html#.documentHeight">documentHeight</a></li><li data-type='method'><a href="module-browser_dom.html#.getDirectDescandants">getDirectDescandants</a></li><li data-type='method'><a href="module-browser_dom.html#.getScrollParent">getScrollParent</a></li><li data-type='method'><a href="module-browser_dom.html#.isOverflown">isOverflown</a></li><li data-type='method'><a href="module-browser_dom.html#.isOverflownY">isOverflownY</a></li><li data-type='method'><a href="module-browser_dom.html#.stripHtmlTags">stripHtmlTags</a></li><li data-type='method'><a href="module-browser_dom.html#.windowHeight">windowHeight</a></li><li data-type='method'><a href="module-browser_dom.html#.windowWidth">windowWidth</a></li></ul></li><li><a href="module-browser_performance.html">browser/performance</a><ul class='methods'><li data-type='method'><a href="module-browser_performance.html#.debounceAnimationFrame">debounceAnimationFrame</a></li><li data-type='method'><a href="module-browser_performance.html#.runAfterFramePaint">runAfterFramePaint</a></li></ul></li><li><a href="module-browser_print.html">browser/print</a><ul class='methods'><li data-type='method'><a href="module-browser_print.html#.printElement">printElement</a></li><li data-type='method'><a href="module-browser_print.html#.printOnly">printOnly</a></li></ul></li><li><a href="module-date.html">date</a><ul class='methods'><li data-type='method'><a href="module-date.html#.prettyDate">prettyDate</a></li></ul></li><li><a href="module-debug.html">debug</a><ul class='methods'><li data-type='method'><a href="module-debug.html#.debugThrough">debugThrough</a></li></ul></li><li><a href="module-number.html">number</a><ul class='methods'><li data-type='method'><a href="module-number.html#.isBetween">isBetween</a></li></ul></li><li><a href="module-object.html">object</a><ul class='methods'><li data-type='method'><a href="module-object.html#.hasRequiredProps">hasRequiredProps</a></li></ul></li><li><a href="module-performance.html">performance</a><ul class='methods'><li data-type='method'><a href="module-performance.html#.debounce">debounce</a></li><li data-type='method'><a href="module-performance.html#.throttle">throttle</a></li></ul></li><li><a href="module-random.html">random</a><ul class='methods'><li data-type='method'><a href="module-random.html#.randomArrayItem">randomArrayItem</a></li><li data-type='method'><a href="module-random.html#.randomInt">randomInt</a></li><li data-type='method'><a href="module-random.html#.randomInterval">randomInterval</a></li><li data-type='method'><a href="module-random.html#.randomString">randomString</a></li><li data-type='method'><a href="module-random.html#.randomTimeStamp">randomTimeStamp</a></li></ul></li><li><a href="module-regex.html">regex</a></li><li><a href="module-string.html">string</a><ul class='methods'><li data-type='method'><a href="module-string.html#.separateCssUnit">separateCssUnit</a></li><li data-type='method'><a href="module-string.html#.stripTags">stripTags</a></li><li data-type='method'><a href="module-string.html#.trimDoubleSpaces">trimDoubleSpaces</a></li><li data-type='method'><a href="module-string.html#.trimLineBreaks">trimLineBreaks</a></li><li data-type='method'><a href="module-string.html#.trimWhitespace">trimWhitespace</a></li><li data-type='method'><a href="module-string.html#.truncate">truncate</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">random.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module random
+ */
+
+
+/**
+ * Returns a randome item from the array
+ * @param {Array} array 
+ * @returns Item from array
+ */
+export function randomArrayItem(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+/**
+ * Returns a random timestamp (hours:minutes:seconds)
+ */
+export function randomTimeStamp(hoursMax = 12, minutesMax = 60, secondsMax = 60) {
+  const r = max => randomInt(0, max).toString().padStart(2, "0");
+  return `${ r(hoursMax) }:${ r(minutesMax) }:${ r(secondsMax) }`;
+}
+
+/**
+ * Calls callback at random intervals
+ * @param {*} callback Function to call on interval
+ * @param {Number} min Minimium interval (ms)
+ * @param {*} max Maximum interval (ms)
+ * @returns {Function} Function to stop 
+ */
+export function randomInterval(callback, min = 2000, max = 6000) {
+  let tid;
+  const setup = () => {
+    const duration = randomInt(min, max);
+    tid = setTimeout(() => {
+      callback();
+      setup();
+    }, duration);
+  };
+  setup();
+  return () => {
+    clearTimeout(tid);
+  };
+}
+
+/**
+ * @param {Number} min 
+ * @param {Number} max 
+ * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+ * @returns {Number}
+ */
+export function randomInt(min = 0, max = 100) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  // The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min) + min); 
+}
+
+/**
+ * Generates a random string of defined length based on
+ * a string of allowed characters.
+ *
+ * @param  {number} length  How many random characters will be in the returned string. Defaults to 10
+ * @param  {string} allowed Which characters can be used when creating the random string. Defaults to A-Z,a-z,0-9
+ * @return {string}         A string of random characters
+ */
+export function randomString(
+  length = 10,
+  allowed = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+) {
+  let result = '';
+  for (let i = 0; i &lt; length; i++) {
+    result += allowed.charAt(Math.floor(Math.random() * allowed.length));
+  }
+  return result;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Sun Dec 17 2023 17:53:46 GMT-0500 (Eastern Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
