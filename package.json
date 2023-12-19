@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Low level utility library",
   "keywords": [
     "array",
