@@ -14,10 +14,10 @@
     "docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "exports": {
-    "./lib/*.js": "./*.js",
-    "./lib/browser/*.js": "./browser/*.js",
-    "./lib/*": "./*",
-    "./lib/browser/*": "./browser/*"
+    "./*.js" : "./lib/*.js",
+    "./*" : "./lib/*",
+    "./browser/*.js" : "./lib/browser/*.js",
+    "./browser/*" : "./lib/browser/*"
   },
   "repository": {
     "type": "git",
