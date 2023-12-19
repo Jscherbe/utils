@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Low level utility library",
   "keywords": [
     "array",
@@ -14,8 +14,10 @@
     "docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "exports": {
-    "./lib/*.js": "./*js",
-    "./lib/browser/*.js": "./browser/*js"
+    "./lib/*.js": "./*.js",
+    "./lib/browser/*.js": "./browser/*.js",
+    "./lib/*": "./*",
+    "./lib/browser/*": "./browser/*"
   },
   "repository": {
     "type": "git",
