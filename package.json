@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Low level utility library",
   "keywords": [
     "array",
@@ -11,11 +11,17 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "types" : "npx tsc"
   },
   "exports": {
     "./*.js": "./lib/*.js",
-    "./*": "./*"
+    "./*": "./lib/*"
+  },
+  "typesVersions": {
+    "*" : {
+      "*" : ["./types/*"]
+    }
   },
   "repository": {
     "type": "git",
@@ -26,6 +32,7 @@
   },
   "devDependencies": {
     "docdash": "^2.0.2",
-    "jsdoc": "^4.0.2"
+    "jsdoc": "^4.0.2",
+    "typescript": "^5.3.3"
   }
 }
