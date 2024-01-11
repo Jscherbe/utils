@@ -35,4 +35,18 @@ export function removeArrayElement(array: any[], element: Element): void;
  * @param {Function} callback A test function that is passed array item and index
  */
 export function offsetFindIndexOf(array: any[], start: number, callback: Function): number;
+/**
+ * Remove duplicate items in array
+ * @param {Array} array Array to remove duplicates from
+ * @returns {Array} New array with duplicates removed
+ */
+export function removeDuplicates(array: any[]): any[];
+/**
+ * Create empty matrix with optional value
+ * @param {Number} columnCount
+ * @param {Number} rowCount
+ * @param {*} value Value to set, default is null
+ * @returns {Array.Array} Matrix (array of arrays)
+ */
+export function createEmptyMatrix(columnCount: number, rowCount: number, value?: any): Array.Array;
 //# sourceMappingURL=array.d.ts.map

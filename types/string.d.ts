@@ -51,4 +51,12 @@ export function trimWhitespace(string: string): string;
  *   @return {string}
  */
 export function truncate(string: string, max: number, overflowChar?: string): string;
+/**
+ * Convert string to title case
+ * @param {String} string String to convert to title case
+ * @param {Array} exceptions Array of words that shouldn't be title case, common words are included by default
+ * @param {Array} defaults Default exceptions incase you want full control
+ * @returns {String}
+ */
+export function titleCase(string: string, exceptions?: any[], defaults?: any[]): string;
 //# sourceMappingURL=string.d.ts.map
