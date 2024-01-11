@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Low level utility library",
   "keywords": [
     "array",
@@ -12,15 +12,18 @@
   "type": "module",
   "scripts": {
     "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
-    "types" : "npx tsc"
+    "types": "npx tsc",
+    "lint": "eslint ./lib --ext .js --ignore-path .gitignore"
   },
   "exports": {
     "./*.js": "./lib/*.js",
     "./*": "./lib/*"
   },
   "typesVersions": {
-    "*" : {
-      "*" : ["./types/*"]
+    "*": {
+      "*": [
+        "./types/*"
+      ]
     }
   },
   "repository": {
@@ -32,6 +35,7 @@
   },
   "devDependencies": {
     "docdash": "^2.0.2",
+    "eslint": "^8.56.0",
     "jsdoc": "^4.0.2",
     "typescript": "^5.3.3"
   }
