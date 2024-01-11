@@ -32,10 +32,10 @@ export function isOverflown(element: Node): boolean;
  * @param {Node} node Node to start search for first scrollable parent
  * @returns {Node}
  * @example
-*   const $navcontent = document.querySelector('.nav__content');
-*   if ($navcontent) {
-*     console.log(getScrollParent($navcontent));
-*   }
+ *   const $navcontent = document.querySelector(".nav__content");
+ *   if ($navcontent) {
+ *     console.log(getScrollParent($navcontent));
+ *   }
 */
 export function getScrollParent(node: Node): Node;
 /**

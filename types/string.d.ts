@@ -1,5 +1,15 @@
-export function capitalizeFirstLetter(string: any): any;
-export function urlize(string: any): any;
+/**
+ * Capitalize First Letter
+ * @param {String} string String to capitolize
+ * @returns {String}
+ */
+export function capitalizeFirstLetter(string: string): string;
+/**
+ * Convert string to characters safe for URL
+ * @param {String} string The string to convert
+ * @returns {String}
+ */
+export function urlize(string: string): string;
 /**
  *   Will return an object with the separation details
  *   @param  {String} string CSS number with unit
