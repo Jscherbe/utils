@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.9
+
+- Add String (toInitials) Creates initials from string
+
 ## 0.0.8
 
 - add number (sum and average) 

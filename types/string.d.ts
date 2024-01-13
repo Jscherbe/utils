@@ -52,6 +52,17 @@ export function trimWhitespace(string: string): string;
  */
 export function truncate(string: string, max: number, overflowChar?: string): string;
 /**
+ * Converts a string to initials
+ * - Example "Jane Allen-Doe" --> "JAD"
+ * - Example (short) "Jane Allen-Doe" --> "JD"
+ * - Example "Wow this part-time" --> "WTPT"
+ * - Example "Wow There are 2 !! People." --> "WTA2P"
+ * @param {String} string String to convert
+ * @param {Boolean} short If true the initials will be limited to two letters, unless it's only one word which would be single letter
+ * @returns {String}
+ */
+export function toInitials(string: string, short: boolean): string;
+/**
  * Convert string to title case
  * @param {String} string String to convert to title case
  * @param {Array} exceptions Array of words that shouldn't be title case, common words are included by default
