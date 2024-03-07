@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.10
+
+- String > separateCssUnit (change returned value to number [versus string])
+  
 ## 0.0.9
 
 - Add String (toInitials) Creates initials from string
