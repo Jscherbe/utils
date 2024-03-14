@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.11
+
+- Array > joinForSentence (Used for joining array of strings/numbers for a sentence)
+  - Example [1,2,3] "1, 2 and 3"
+
 ## 0.0.10
 
 - String > separateCssUnit (change returned value to number [versus string])

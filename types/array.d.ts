@@ -49,4 +49,11 @@ export function removeDuplicates(array: any[]): any[];
  * @returns {Array.Array} Matrix (array of arrays)
  */
 export function createEmptyMatrix(columnCount: number, rowCount: number, value?: any): Array.Array;
+/**
+ * Joins an array into sentence form
+ * - IE ["2013", "2015", "2020"] --> "2013, 2015 and 2020"
+ * @param {Array.<String, Number>} arr Array to join
+ * @returns {String}
+ */
+export function joinForSentence(array: any): string;
 //# sourceMappingURL=array.d.ts.map
