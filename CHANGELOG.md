@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.12
+
+- Array > getFirstLast() Test whether an index in an array is first or last
+
 ## 0.0.11
 
 - Array > joinForSentence (Used for joining array of strings/numbers for a sentence)

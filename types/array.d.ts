@@ -56,4 +56,12 @@ export function createEmptyMatrix(columnCount: number, rowCount: number, value?:
  * @returns {String}
  */
 export function joinForSentence(array: any): string;
+/**
+ * Test whether an index in an array is first or last
+ * - Returns an object with both first/last keys (true/false)
+ * @param {Array} array Array to check index against (uses .length)
+ * @param {Number} index Index to get info for
+ * @returns {Object} { first: {Boolean}, last: {Boolean} }
+ */
+export function getFirstLast(array: any[], index: number): any;
 //# sourceMappingURL=array.d.ts.map
