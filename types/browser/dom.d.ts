@@ -2,6 +2,11 @@
  * @module browser/dom
  */
 /**
+ * Determine if the script is executing in a browser environment
+ * @returns {Boolean}
+ */
+export function isBrowser(): boolean;
+/**
  * Remove HTML elements from string
  * @param {String} html Source HTML
  * @returns {String} String version

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.13
+
+- Browser > dom > isBrowser() Test whether script is executing in browser environment
+
 ## 0.0.12
 
 - Array > getFirstLast() Test whether an index in an array is first or last
