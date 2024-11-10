@@ -1,31 +1,35 @@
 # Change Log
 
+## 0.0.14
+
+- (Added) Array > filterInPlace() Will not copy array, mutates the array passed (instead of copy [ie. Array.filter()])
+
 ## 0.0.13
 
-- Browser > dom > isBrowser() Test whether script is executing in browser environment
+- (Added) Browser > dom > isBrowser() Test whether script is executing in browser environment
 
 ## 0.0.12
 
-- Array > getFirstLast() Test whether an index in an array is first or last
+- (Added) Array > getFirstLast() Test whether an index in an array is first or last
 
 ## 0.0.11
 
-- Array > joinForSentence (Used for joining array of strings/numbers for a sentence)
+- (Added) Array > joinForSentence (Used for joining array of strings/numbers for a sentence)
   - Example [1,2,3] "1, 2 and 3"
 
 ## 0.0.10
 
-- String > separateCssUnit (change returned value to number [versus string])
+- (Added) String > separateCssUnit (change returned value to number [versus string])
   
 ## 0.0.9
 
-- Add String (toInitials) Creates initials from string
+- (Added) Add String (toInitials) Creates initials from string
 
 ## 0.0.8
 
-- add number (sum and average) 
-- Add array (removeDuplicates, createEmptyMatrix)
-- Add string (titleCase)
+- (Added)  number (sum and average) 
+- (Added)  array (removeDuplicates, createEmptyMatrix)
+- (Added)  string (titleCase)
 
 ## 0.0.7
 

@@ -64,4 +64,13 @@ export function joinForSentence(array: any): string;
  * @returns {Object} { first: {Boolean}, last: {Boolean} }
  */
 export function getFirstLast(array: any[], index: number): any;
+/**
+ * Filter Array In Place
+ * - Will not copy array, mutates the array passed (instead of copy [ie. Array.filter()])
+ * - Note, removes items in reverse order (end-to-start of array), test will be called on last item first and so on
+ * @param {Array} array The array to filter items from
+ * @param {Function} test A function to filter elements based on a truthy/falsy condition
+ * @returns {Array} The original array
+ */
+export function filterInPlace(array: any[], test: Function): any[];
 //# sourceMappingURL=array.d.ts.map
