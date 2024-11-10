@@ -1,10 +1,18 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.15",
+  "version": "0.0.14",
   "description": "Low level utility library",
   "keywords": [
     "array",
-    "Utilities"
+    "Utilities",
+    "utils",
+    "library",
+    "Javascript",
+    "string",
+    "dom",
+    "number",
+    "random",
+    "regex"
   ],
   "author": "Joseph Scherben <jscherbe@gmail.com>",
   "homepage": "https://github.com/Jscherbe/utils#readme",
