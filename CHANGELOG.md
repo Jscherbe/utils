@@ -1,7 +1,7 @@
 # Change Log
 
 
-## 0.0.15
+## 0.0.16
 
 - (Added) String > extractMatchDetails() Provides details about regex match for string for replacement/usage
 
