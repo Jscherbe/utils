@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",

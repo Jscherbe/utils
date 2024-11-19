@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.0.17
+
+- Fix mistake in extractMatchDetails
 
 ## 0.0.16
 
