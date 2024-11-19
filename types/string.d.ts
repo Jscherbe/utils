@@ -70,4 +70,11 @@ export function toInitials(string: string, short: boolean): string;
  * @returns {String}
  */
 export function titleCase(string: string, exceptions?: any[], defaults?: any[]): string;
+/**
+ * Function that matches regex against string and returns details helpful for replacing/using/highlighting a single match within a string
+ * @param {String} string The string to extract from
+ * @param {Regex} regex The regular expression to match against
+ * @returns {Object|Null} If match return object with { matched, startIndex, endIndex, before, after }, when no match is found this return null
+ */
+export function extractMatchDetails(string: string, regex: Regex): any | null;
 //# sourceMappingURL=string.d.ts.map

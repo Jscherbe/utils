@@ -1,10 +1,15 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.14",
-  "description": "Low level utility library",
+  "version": "0.0.15",
+  "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
-    "Utilities",
+    "utility",
+    "utilities",
+    "helper",
+    "function",
+    "tool",
+    "library",
     "utils",
     "library",
     "Javascript",
