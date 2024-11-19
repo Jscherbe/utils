@@ -1,5 +1,10 @@
 # Change Log
 
+
+## 0.0.15
+
+- (Added) String > extractMatchDetails() Provides details about regex match for string for replacement/usage
+
 ## 0.0.14
 
 - (Added) Array > filterInPlace() Will not copy array, mutates the array passed (instead of copy [ie. Array.filter()])
