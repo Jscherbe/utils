@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.18
+
+- Change package.json 'exports' to explicit paths and remove wildcard, remove extensionless exports. **Important**, all imports should use js extension like:
+  - `import { hasRequiredProps } from "@ulu/utils/object.js";`
+
 ## 0.0.17
 
 - Fix mistake in extractMatchDetails
