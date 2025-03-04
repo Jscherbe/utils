@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
@@ -29,8 +29,18 @@
     "lint": "eslint ./lib --ext .js --ignore-path .gitignore"
   },
   "exports": {
-    "./*.js": "./lib/*.js",
-    "./*": "./lib/*"
+    "./array.js": "./lib/array.js",
+    "./browser/print.js": "./lib/browser/print.js",
+    "./browser/performance.js": "./lib/browser/performance.js",
+    "./browser/dom.js": "./lib/browser/dom.js",
+    "./date.js": "./lib/date.js",
+    "./debug.js": "./lib/debug.js",
+    "./number.js": "./lib/number.js",
+    "./object.js": "./lib/object.js",
+    "./performance.js": "./lib/performance.js",
+    "./random.js": "./lib/random.js",
+    "./regex.js": "./lib/regex.js",
+    "./string.js": "./lib/string.js"
   },
   "typesVersions": {
     "*": {
