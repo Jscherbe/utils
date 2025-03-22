@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
@@ -34,6 +34,8 @@
   },
   "exports": {
     "./array.js": "./lib/array.js",
+    "./node/path.js": "./lib/node/path.js",
+    "./node/fs.js": "./lib/node/fs.js",
     "./browser/print.js": "./lib/browser/print.js",
     "./browser/performance.js": "./lib/browser/performance.js",
     "./browser/dom.js": "./lib/browser/dom.js",
