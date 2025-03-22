@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
@@ -17,7 +17,11 @@
     "dom",
     "number",
     "random",
-    "regex"
+    "regex",
+    "fs",
+    "path",
+    "url",
+    "esm"
   ],
   "author": "Joseph Scherben <jscherbe@gmail.com>",
   "homepage": "https://github.com/Jscherbe/utils#readme",
