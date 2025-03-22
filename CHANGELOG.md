@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.0.19
+
+- Add node > fs > readFileSyncFromUrl()
+  - Utility for getting files in node ES modules 
+- Add node > path > getUrlDirname() and resolveFromUrlDir() 
+  - To help with getting the common __dirname in ES node modules
+
 ## 0.0.18
 
 - Change package.json 'exports' to explicit paths and remove wildcard, remove extensionless exports. **Important**, all imports should use js extension like:
