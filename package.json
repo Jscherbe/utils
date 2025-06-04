@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
@@ -21,7 +21,8 @@
     "fs",
     "path",
     "url",
-    "esm"
+    "esm",
+    "clipboard"
   ],
   "author": "Joseph Scherben <jscherbe@gmail.com>",
   "homepage": "https://github.com/Jscherbe/utils#readme",
