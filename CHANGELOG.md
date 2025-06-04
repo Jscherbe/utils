@@ -1,11 +1,14 @@
 # Change Log
 
+## 0.0.23
 
-## 0.0.21
+- Add missing package exports for new **browser/clipboard** module
+
+## 0.0.22 
 
 - Rename **browser/clipboard** module with copyText
 
-## 0.0.20
+## 0.0.21
 
 - Add **browser/clipboard** module with copyTextToClipboard
 

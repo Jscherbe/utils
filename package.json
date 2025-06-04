@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
@@ -39,6 +39,7 @@
     "./browser/print.js": "./lib/browser/print.js",
     "./browser/performance.js": "./lib/browser/performance.js",
     "./browser/dom.js": "./lib/browser/dom.js",
+    "./browser/clipboard.js": "./lib/browser/clipboard.js",
     "./date.js": "./lib/date.js",
     "./debug.js": "./lib/debug.js",
     "./number.js": "./lib/number.js",
