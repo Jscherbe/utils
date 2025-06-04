@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.24
+
+- **browser/clipboard** Work on fallback for clipboard (better error handling)
+
 ## 0.0.23
 
 - Add missing package exports for new **browser/clipboard** module
