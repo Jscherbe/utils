@@ -1,5 +1,14 @@
 # Change Log
 
+
+## 0.0.21
+
+- Rename **browser/clipboard** module with copyText
+
+## 0.0.20
+
+- Add **browser/clipboard** module with copyTextToClipboard
+
 ## 0.0.19
 
 - Add node > fs > readFileSyncFromUrl()
