@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.25
+
+- **regex** Add whitespaceBeforeHtml
+
 ## 0.0.24
 
 - **browser/clipboard** Work on fallback for clipboard (better error handling)
