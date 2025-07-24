@@ -117,7 +117,7 @@ export function getElements(target: string | Node, context?: any): any[];
  * @param {HTMLElement} [options.propertyElement=document.documentElement] - The element to which the custom property will be added. Defaults to document.documentElement for :root access.
  * @param {string} [options.propertyName="--ulu-scrollbar-width"] - The name of the custom property to set.
  */
-export function addScrollbarProperty(options: {
+export function addScrollbarCustomProperty(options: {
     scrollableChild?: HTMLElement;
     container?: Window | HTMLElement;
     propertyElement?: HTMLElement;
