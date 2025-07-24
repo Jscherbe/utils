@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>random.js - Documentation</title>
+    <title>json.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -35,7 +35,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">random.js</h1>
+    <h1 class="page-title">json.js</h1>
     
 
     
@@ -46,79 +46,58 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module random
+ * @module json
  */
 
-
 /**
- * Returns a randome item from the array
- * @param {Array} array 
- * @returns Item from array
- */
-export function randomArrayItem(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
-/**
- * Returns a random timestamp (hours:minutes:seconds)
- */
-export function randomTimeStamp(hoursMax = 12, minutesMax = 60, secondsMax = 60) {
-  const r = max => randomInt(0, max).toString().padStart(2, "0");
-  return `${ r(hoursMax) }:${ r(minutesMax) }:${ r(secondsMax) }`;
-}
-
-/**
- * Calls callback at random intervals
- * @param {*} callback Function to call on interval
- * @param {Number} min Minimium interval (ms)
- * @param {*} max Maximum interval (ms)
- * @returns {Function} Function to stop 
- */
-export function randomInterval(callback, min = 2000, max = 6000) {
-  let tid;
-  const setup = () => {
-    const duration = randomInt(min, max);
-    tid = setTimeout(() => {
-      callback();
-      setup();
-    }, duration);
-  };
-  setup();
-  return () => {
-    clearTimeout(tid);
-  };
-}
-
-/**
- * @param {Number} min 
- * @param {Number} max 
- * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
- * @returns {Number}
- */
-export function randomInt(min = 0, max = 100) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  // The maximum is exclusive and the minimum is inclusive
-  return Math.floor(Math.random() * (max - min) + min); 
-}
-
-/**
- * Generates a random string of defined length based on
- * a string of allowed characters.
+ * Safely parses a JSON string, returning a default value on error.
+ * This function provides an optional callback for custom error handling.
  *
- * @param  {number} length  How many random characters will be in the returned string. Defaults to 10
- * @param  {string} allowed Which characters can be used when creating the random string. Defaults to A-Z,a-z,0-9
- * @return {string}         A string of random characters
+ * @param {string} jsonString - The string to parse.
+ * @param {any} [defaultValue={}] - The value to return if parsing fails.
+ * @param {function(Error, string): void} [onError=null] - Optional callback function called with the error and the original string if parsing fails.
+ * If not provided, a console warning will be logged by default.
+ * Pass `() => {}` to suppress all logging.
+ * @returns {any} The parsed JSON object, or the defaultValue if parsing fails.
  */
-export function randomString(
-  length = 10,
-  allowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-) {
-  let result = "";
-  for (let i = 0; i &lt; length; i++) {
-    result += allowed.charAt(Math.floor(Math.random() * allowed.length));
+export function safeParse(jsonString, defaultValue = {}, onError = null) {
+  try {
+    return JSON.parse(jsonString);
+  } catch (error) {
+    if (typeof onError === "function") {
+      onError(error, jsonString); // Let the caller handle the error
+    } else {
+      // Default behavior if no custom onError is provided
+      console.warn("safeParse: Failed to parse JSON string:", jsonString, "Error:", error);
+    }
+    return defaultValue;
   }
-  return result;
+}
+
+/**
+ * Parses a JSON string.
+ * This function will throw an error if the input string is not valid JSON,
+ * similar to how JSON.parse() behaves.
+ * It also provides an optional callback that runs BEFORE the error is re-thrown.
+ *
+ * @param {string} jsonString - The string to parse as JSON.
+ * @param {function(Error, string): void} [onFail=null] - Optional callback function called with the error and the original string if parsing fails, before the error is re-thrown.
+ * @returns {any} The parsed JavaScript object or value.
+ * @throws {SyntaxError} If the string is not valid JSON.
+ */
+export function parse(jsonString, onFail = null) {
+  try {
+    const parsed = JSON.parse(jsonString);
+    return parsed;
+  } catch (error) {
+    if (typeof onFail === "function") {
+      onFail(error, jsonString); // Allow custom handling before re-throwing
+    } else {
+      // Default behavior if no custom onFail is provided
+      console.error("parse: Error parsing JSON string:", jsonString, "Error:", error);
+    }
+    throw error; // Always re-throw the original error for 'parse'
+  }
 }</code></pre>
         </article>
     </section>

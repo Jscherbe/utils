@@ -77,4 +77,10 @@ export function titleCase(string: string, exceptions?: any[], defaults?: any[]):
  * @returns {Object|Null} If match return object with { matched, startIndex, endIndex, before, after }, when no match is found this return null
  */
 export function extractMatchDetails(string: string, regex: Regex): any | null;
+/**
+ * Convert kebab string to camel casing
+ * @param {string} string - String to convert
+ * @returns {string} - Camel case version of string
+ */
+export function kebabToCamel(string: string): string;
 //# sourceMappingURL=string.d.ts.map

@@ -1,7 +1,4 @@
 /**
- * @module browser/dom
- */
-/**
  * Determine if the script is executing in a browser environment
  * @returns {Boolean}
  */
@@ -75,4 +72,63 @@ export function composeElement(config: {
     attributes: any;
     children: any[];
 }): HTMLElement;
+/**
+ * Get an elements JSON dataset value
+ * - Falls to empty object if no json passed
+ * @param {Node} element
+ * @param {String} key key in dataset object for element
+ * @param {*} [defaultValue={}] Value to fallback to if no JSON
+ * @returns {Object} Empty object or JSON object from dataset
+ */
+export function getDatasetJson(element: Node, key: string, defaultValue?: any): any;
+/**
+ * Get an elements JSON dataset value that could potentially just be a single string
+ * - If JSON it will return the object else it will return the value directly
+ * @param {Node} element
+ * @param {String} key key in dataset object for element
+ * @returns {Object|String} JSON object or current dataset value (string or empty string if no value)
+ */
+export function getDatasetOptionalJson(element: Node, key: string): any | string;
+/**
+ * Check if a pointer event x/y was outside an elements bounding box
+ * @param {Node} element - Element to test against
+ * @param {Event} event - Event object for (pointer related events)
+ */
+export function wasClickOutside(element: Node, event: Event): boolean;
+/**
+ * Resolve a target to Element
+ * @param {String|Node} target The selector or node/element
+ * @param {Object} context [document] The context to query possible selectors from
+ * @return {HTMLElement} The element or null if not found
+ */
+export function getElement(target: string | Node, context?: any): HTMLElement;
+/**
+ * Resolve a target to Elements
+ * @param {String|Node} target The selector or node/element
+ * @param {Object} context [document] The context to query possible selectors from
+ * @return {Array} The elements or null if not found
+ */
+export function getElements(target: string | Node, context?: any): any[];
+/**
+ * Sets a CSS custom property equal to the scrollbar width.
+ * @param {object} options - Configuration options.
+ * @param {HTMLElement} [options.scrollableChild=document.body] - An element that is a child of a scrollable container (used for width calculation).
+ * @param {Window|HTMLElement} [options.container=window] - The container that can be scrolled (used for width calculation).
+ * @param {HTMLElement} [options.propertyElement=document.documentElement] - The element to which the custom property will be added. Defaults to document.documentElement for :root access.
+ * @param {string} [options.propertyName="--ulu-scrollbar-width"] - The name of the custom property to set.
+ */
+export function addScrollbarProperty(options: {
+    scrollableChild?: HTMLElement;
+    container?: Window | HTMLElement;
+    propertyElement?: HTMLElement;
+    propertyName?: string;
+}): void;
+/**
+ * Calculates the width of the scrollbar.
+ *
+ * @param {HTMLElement} [element=document.body] -The element that is the child of a scrollable container
+ * @param {Window|HTMLElement} [container=window] - The container that can be scrolled
+ * @returns {number} The width of the scrollbar in pixels.
+ */
+export function getScrollbarWidth(element?: HTMLElement, container?: Window | HTMLElement): number;
 //# sourceMappingURL=dom.d.ts.map

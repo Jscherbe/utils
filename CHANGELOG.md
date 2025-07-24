@@ -2,7 +2,9 @@
 
 ## 0.0.25
 
-- **regex** Add whitespaceBeforeHtml
+- **regex** Add `whitespaceBeforeHtml`, `jsonString`
+- **json** New module with (`parse`, `safeParse`) - to reduce having to write try/catch's
+- **com** Add `getDatasetJson`, `getDatasetOptionalJson`, `wasClickOutside`, `getElement`, `getElements`, `addScrollbarProperty`, `getScrollbarWidth` functions (moved from @ulu/frontend library)
 
 ## 0.0.24
 
