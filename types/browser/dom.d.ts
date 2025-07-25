@@ -131,4 +131,17 @@ export function addScrollbarCustomProperty(options: {
  * @returns {number} The width of the scrollbar in pixels.
  */
 export function getScrollbarWidth(element?: HTMLElement, container?: Window | HTMLElement): number;
+/**
+ * Prevents scrolling on the document body and optionally compensates for scrollbar shift.
+ * Caches original body styles and returns a function to restore them.
+ *
+ * @param {Object} config Object of options/arguments
+ * @param {HTMLElement} [config.container=document.body] - Container to prevent scroll on (defaults to document.body)
+ * @param {Boolean} [config.preventShift=false] If true, adds padding-right to the container equal to the scrollbar width to prevent layout shift, defaults to false
+ * @returns {Function} A restore/cleanup function that restores the original body styles.
+ */
+export function preventBodyScroll({ preventShift, container }: {
+    container?: HTMLElement;
+    preventShift?: boolean;
+}): Function;
 //# sourceMappingURL=dom.d.ts.map

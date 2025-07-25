@@ -1,12 +1,18 @@
 # Change Log
 
+## 0.0.28
+
+- **browser/dom** 
+  - Add `preventScroll` used in frontend and frontend-vue
+
 ## 0.0.27
 
 - **string** Add normalizeClasses() - Which resolves class list (to set) from various input types (String, Array, Object), similar to vue class binding API, used in frontend-vue for modifiers
 
 ## 0.0.26
 
-- **browser/dom** Change recently added `addScrollbarProperty` to `addScrollbarCustomProperty`
+- **browser/dom** 
+  - Change recently added `addScrollbarProperty` to `addScrollbarCustomProperty`
 
 ## 0.0.25
 
