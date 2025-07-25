@@ -83,12 +83,4 @@ export function extractMatchDetails(string: string, regex: Regex): any | null;
  * @returns {string} - Camel case version of string
  */
 export function kebabToCamel(string: string): string;
-/**
- * Helper function to process various Vue like class binding types
- * - Used for modifiers
- * - Handles same structure as Vue class bindings
- * @param {Object|Array|String}
- * @return {Set} Set of unique classnames
- */
-export function normalizeClasses(inputClasses: any): Set;
 //# sourceMappingURL=string.d.ts.map

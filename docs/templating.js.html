@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>node/fs.js - Documentation</title>
+    <title>templating.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -37,7 +37,7 @@ Functions that are primarily used for templating (vue, static sites, etc)module:
 
 <div id="main">
     
-    <h1 class="page-title">node/fs.js</h1>
+    <h1 class="page-title">templating.js</h1>
     
 
     
@@ -48,32 +48,44 @@ Functions that are primarily used for templating (vue, static sites, etc)module:
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module node/fs
+ * @module templating
+ * Functions that are primarily used for templating (vue, static sites, etc)
  */
-
-import { readFileSync } from "fs";
-import { resolveFromUrlDir } from "./path.js";
 
 /**
- * Reads a file synchronously relative to a URL's directory.
- * @param {String} url The URL representing the module's location (e.g., import.meta.url).
- * @param {String} relativePath The relative path to the file.
- * @param {object|String} [options] The options to pass to readFileSync.
- * @returns {Buffer|String} The file contents.
- * @throws {TypeError} If url or relativePath is not a string.
- * @throws {Error} If there is an error reading the file.
- * @example
- * const text = readFileSyncFromUrl(import.meta.url, "text-file.txt", "utf8");
+ * Helper function to process various Vue like class binding types
+ * - Used for modifiers
+ * - Handles same structure as Vue class bindings 
+ * @param {Object|Array|String}
+ * @return {Set} Set of unique classnames
  */
-export function readFileSyncFromUrl(url, relativePath, options) {
-  if (typeof url !== "string" || typeof relativePath !== "string") {
-    throw new TypeError("url and relativePath must be strings");
+export function normalizeClasses(inputClasses) {
+  const classes = new Set();
+
+  if (!inputClasses) {
+    return classes; // Return empty set if null/undefined/empty
   }
-  try {
-    return readFileSync(resolveFromUrlDir(url, relativePath), options);
-  } catch (error) {
-    throw new Error(`Error reading file "${ relativePath }": ${ error.message }`);
+
+  if (typeof inputClasses === "string") {
+    // Split string by space to handle multiple classes like "class1 class2"
+    inputClasses.split(" ").forEach(cls => {
+      if (cls) classes.add(cls);
+    });
+  } else if (Array.isArray(inputClasses)) {
+    inputClasses.forEach(item => {
+      // Recursively normalize items within the array (supports [{ "active": true }, "static"])
+      normalizeClasses(item).forEach(cls => classes.add(cls));
+    });
+  } else if (typeof inputClasses === "object") {
+    // Handle object syntax { "class-name": condition }
+    for (const key in inputClasses) {
+      if (Object.prototype.hasOwnProperty.call(inputClasses, key) &amp;&amp; inputClasses[key]) {
+        if (key) classes.add(key); // Add key if its value is truthy and key is not empty
+      }
+    }
   }
+
+  return classes;
 }</code></pre>
         </article>
     </section>

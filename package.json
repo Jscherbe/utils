@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
@@ -23,7 +23,9 @@
     "path",
     "url",
     "esm",
-    "clipboard"
+    "clipboard",
+    "templating",
+    "classes"
   ],
   "author": "Joseph Scherben <jscherbe@gmail.com>",
   "homepage": "https://github.com/Jscherbe/utils#readme",
@@ -50,7 +52,8 @@
     "./random.js": "./lib/random.js",
     "./regex.js": "./lib/regex.js",
     "./json.js": "./lib/json.js",
-    "./string.js": "./lib/string.js"
+    "./string.js": "./lib/string.js",
+    "./templating.js": "./lib/templating.js"
   },
   "typesVersions": {
     "*": {

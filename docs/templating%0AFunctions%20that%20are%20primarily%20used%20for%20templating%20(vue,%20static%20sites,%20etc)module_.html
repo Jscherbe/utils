@@ -3,7 +3,8 @@
 <head>
     
     <meta charset="utf-8">
-    <title>node/fs.js - Documentation</title>
+    <title>templating
+Functions that are primarily used for templating (vue, static sites, etc) - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -37,46 +38,274 @@ Functions that are primarily used for templating (vue, static sites, etc)module:
 
 <div id="main">
     
-    <h1 class="page-title">node/fs.js</h1>
+    <h1 class="page-title">templating
+Functions that are primarily used for templating (vue, static sites, etc)</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @module node/fs
- */
+</header>
 
-import { readFileSync } from "fs";
-import { resolveFromUrlDir } from "./path.js";
+<article>
+    
+        <div class="container-overview">
+        
+            
 
-/**
- * Reads a file synchronously relative to a URL's directory.
- * @param {String} url The URL representing the module's location (e.g., import.meta.url).
- * @param {String} relativePath The relative path to the file.
- * @param {object|String} [options] The options to pass to readFileSync.
- * @returns {Buffer|String} The file contents.
- * @throws {TypeError} If url or relativePath is not a string.
- * @throws {Error} If there is an error reading the file.
- * @example
- * const text = readFileSyncFromUrl(import.meta.url, "text-file.txt", "utf8");
- */
-export function readFileSyncFromUrl(url, relativePath, options) {
-  if (typeof url !== "string" || typeof relativePath !== "string") {
-    throw new TypeError("url and relativePath must be strings");
-  }
-  try {
-    return readFileSync(resolveFromUrlDir(url, relativePath), options);
-  } catch (error) {
-    throw new Error(`Error reading file "${ relativePath }": ${ error.message }`);
-  }
-}</code></pre>
-        </article>
-    </section>
+<dl class="details">
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="templating.js.html">templating.js</a>, <a href="templating.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="templating
+Functions that are primarily used for templating (vue, static sites, etc)module:.normalizeClasses"><span class="type-signature"></span>templating
+Functions that are primarily used for templating (vue, static sites, etc)module:.normalizeClasses<span class="signature">(inputClasses)</span><span class="type-signature"> &rarr; {Set}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Helper function to process various Vue like class binding types</p>
+<ul>
+<li>Used for modifiers</li>
+<li>Handles same structure as Vue class bindings</li>
+</ul></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="templating.js.html">templating.js</a>, <a href="templating.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>inputClasses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Set of unique classnames</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Set</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

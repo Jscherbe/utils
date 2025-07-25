@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.30
+
+- **string.js** --> **templating.js** Move new normalizeClasses() to new module for templating, since it returns a set and accepts many types of input
+
 ## 0.0.29
 
 - **browser/dom** 
