@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.29
+
+- **browser/dom** 
+  - Correct name `preventScroll` was `preventBodyScroll`
+
 ## 0.0.28
 
 - **browser/dom** 

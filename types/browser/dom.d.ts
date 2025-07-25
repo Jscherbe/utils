@@ -140,7 +140,7 @@ export function getScrollbarWidth(element?: HTMLElement, container?: Window | HT
  * @param {Boolean} [config.preventShift=false] If true, adds padding-right to the container equal to the scrollbar width to prevent layout shift, defaults to false
  * @returns {Function} A restore/cleanup function that restores the original body styles.
  */
-export function preventBodyScroll({ preventShift, container }: {
+export function preventScroll({ preventShift, container }: {
     container?: HTMLElement;
     preventShift?: boolean;
 }): Function;
