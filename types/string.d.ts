@@ -17,6 +17,17 @@ export function urlize(string: string): string;
  */
 export function separateCssUnit(original: any): any;
 /**
+ * Converts a duration string to a unitless millisecond value.
+ *
+ * If the input string contains 'ms', it is parsed as milliseconds.
+ * Otherwise, it is assumed to be in seconds and converted to milliseconds.
+ * Note if a multi value list of durations is passed only the first duration is used (ie. "200ms, 1s")
+ *
+ * @param {string} value - The duration string (e.g., "2s", "500ms", "200ms, 1s").
+ * @returns {number} The duration in milliseconds as a number.
+ */
+export function cssDurationToMs(value: string): number;
+/**
  * Removes HTML tags from string (can be used in Node)
  * - Different than DOM version
  * - Note you can use document.createElement and grab textContent (but this could execute code in browser)

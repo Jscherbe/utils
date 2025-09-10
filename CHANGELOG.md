@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.31
+
+- Add **cssDurationToMs()** to `string.js`, Function accepts duration string and returns number for milliseconds (to use in JS/etc)
+
 ## 0.0.30
 
 - **string.js** --> **templating.js** Move new normalizeClasses() to new module for templating, since it returns a set and accepts many types of input
