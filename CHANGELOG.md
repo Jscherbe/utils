@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.32
+
+- **Breaking, Spelling Correction** `getDirectDescandants` --> `getDirectDescendants`
+- `browser/dom.js > getScrollParent()` - Refactored to be more robust and check that a parent actually is allowed to scroll, will correctly return document.scrollingElement if the scrolling element is the viewport
+
 ## 0.0.31
 
 - Add **cssDurationToMs()** to `string.js`, Function accepts duration string and returns number for milliseconds (to use in JS/etc)
