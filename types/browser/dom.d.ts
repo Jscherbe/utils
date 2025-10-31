@@ -15,7 +15,7 @@ export function stripHtmlTags(html: string): string;
  *   @param  {String} selector
  *   @return {Array}
  */
-export function getDirectDescandants(element: Node, selector: string): any[];
+export function getDirectDescendants(element: Node, selector: string): any[];
 /**
  *   Checks if element is overflown vertically
  *   @param  {Node}  element
@@ -34,9 +34,9 @@ export function isOverflown(element: Node): boolean;
  * @param {Node} node Node to start search for first scrollable parent
  * @returns {Node}
  * @example
- *   const $navcontent = document.querySelector(".nav__content");
- *   if ($navcontent) {
- *     console.log(getScrollParent($navcontent));
+ *   const $navContent = document.querySelector(".nav__content");
+ *   if ($navContent) {
+ *     console.log(getScrollParent($navContent));
  *   }
 */
 export function getScrollParent(node: Node): Node;
