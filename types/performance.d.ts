@@ -13,8 +13,10 @@ export function throttle(timer: Function): Function;
  * @param {Number} wait  Amount of time after (milliseconds)
  * @param {Boolean} immediate  trigger the function on the leading edge, instead of the trailing.
  * @param {Object} valueThis  Context for function
+ * @return {Function} A new debounced function. It also includes a `.cancel()` method to clear any pending execution.
  * @author David Walsh
  *   - https://davidwalsh.name/javascript-debounce-function
+ *   - Updated to have cancel method
  */
-export function debounce(callback: Function, wait: number, immediate: boolean, valueThis: any): (...args: any[]) => void;
+export function debounce(callback: Function, wait: number, immediate: boolean, valueThis: any): Function;
 //# sourceMappingURL=performance.d.ts.map
