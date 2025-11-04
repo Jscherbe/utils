@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.33
+
+- `performance.js` --> `debounce` - Add cancel method to returned debounce function
+
 ## 0.0.32
 
 - **Breaking, Spelling Correction** `getDirectDescandants` --> `getDirectDescendants`
