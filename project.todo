@@ -1,4 +1,7 @@
 Todos:
+  ☐ Future Updates
+    ☐ Adjust package.json exports to map to both import and types and remove old legacy typesVersions property in package.json
+    ☐ Consider bundling this with VITE vs current raw/bundleless 
   ☐ Setup JSDoc site better
     ☐ Add title
     ☐ Introduction Home

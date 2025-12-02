@@ -1,6 +1,6 @@
 {
   "name": "@ulu/utils",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "A collection of helpful utility functions for common JavaScript development and browser DOM manipulation tasks",
   "keywords": [
     "array",
@@ -11,8 +11,7 @@
     "tool",
     "library",
     "utils",
-    "library",
-    "Javascript",
+    "javascript",
     "string",
     "dom",
     "json",
@@ -55,6 +54,7 @@
     "./string.js": "./lib/string.js",
     "./templating.js": "./lib/templating.js"
   },
+  "sideEffects" : false,
   "typesVersions": {
     "*": {
       "*": [

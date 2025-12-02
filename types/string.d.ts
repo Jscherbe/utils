@@ -1,6 +1,6 @@
 /**
  * Capitalize First Letter
- * @param {String} string String to capitolize
+ * @param {String} string String to capitalize
  * @returns {String}
  */
 export function capitalizeFirstLetter(string: string): string;
@@ -42,13 +42,27 @@ export function stripTags(html: string): string;
  */
 export function trimDoubleSpaces(string: string): string;
 /**
+ * Remove all line breaks from string
+ * @param {String} string
+ * @returns {String}
+ */
+export function removeLineBreaks(string: string): string;
+/**
  * Remove line breaks
+ * @deprecated Please use 'removeLineBreaks' this will be removed in the future
  * @param {String} string String to trim
  * @returns {String}
  */
 export function trimLineBreaks(string: string): string;
 /**
+ * Remove line breaks and double or more spaces from string
+ * @param {String} string String to trim
+ * @returns {String}
+ */
+export function flatten(string: string): string;
+/**
  * Designed originally to flatten style definitions
+ * @deprecated Please use 'flatten' this will be removed in the future
  * @param {String} string String to trim
  * @returns {String}
  */

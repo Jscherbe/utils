@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.0.34
+
+- Add sideEffects false to package.json for tree-shaking libraries (so they know these utilities don't have any side effects)
+- README updates
+- `lib/object.js`
+  - Add `includeIf` For use in config objects conditional object/array
+- `lib/templating.js`
+  - Add `when` and `optional` for conditional values inside string templates
+  - Add `normalizeClassString` to flatten/join class into a final string vs the set that normalizeClasses returns
+- Add `lib/string.js`
+  - Replace `trimLineBreaks` with `removeLineBreaks` (same behavior new function name that better fits what it does). `trimLineBreaks` is marked as deprecated and converted to an alias of `removeLineBreaks` for now as not to break projects, but will be removed in the future.
+  - Replace `trimWhitespace` with `flatten` (same behavior new function name that better fits what it does). `trimWhitespace` is marked as deprecated and converted to an alias of `flatten` for now as not to break projects, but will be removed in the future.
+
 ## 0.0.33
 
 - `performance.js` --> `debounce` - Add cancel method to returned debounce function
