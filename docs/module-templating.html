@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>object - Documentation</title>
+    <title>templating - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -35,7 +35,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">object</h1>
+    <h1 class="page-title">templating</h1>
     
 
     
@@ -57,11 +57,14 @@
 
 <dl class="details">
     
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Functions that are primarily used for templating (vue, static sites, etc)</p></li></ul></dd>
+    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object.js.html">object.js</a>, <a href="object.js.html#line1">line 1</a>
+        <a href="templating.js.html">templating.js</a>, <a href="templating.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -100,6 +103,8 @@
 
 
             
+                <div class="description usertext"><p>Functions that are primarily used for templating (vue, static sites, etc)</p></div>
+            
 
             
         
@@ -128,7 +133,7 @@
 
     
 
-    <h4 class="name" id=".hasRequiredProps"><span class="type-signature type-signature-static">(static) </span>hasRequiredProps<span class="signature">(required)</span><span class="type-signature"> &rarr; {function}</span></h4>
+    <h4 class="name" id=".normalizeClassString"><span class="type-signature type-signature-static">(static) </span>normalizeClassString<span class="signature">(classes)</span><span class="type-signature"> &rarr; {String}</span></h4>
 
     
 
@@ -138,13 +143,14 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Checks object has required properties</p></li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li><p>Creates a class string from various sources (arrays, objects, strings).
+A convenience wrapper for <code>normalizeClasses</code> that returns a string.</p></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object.js.html">object.js</a>, <a href="object.js.html#line15">line 15</a>
+        <a href="templating.js.html">templating.js</a>, <a href="templating.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -191,10 +197,11 @@
 
     <h5 class="h5-examples">Example</h5>
     
-    <pre class="prettyprint"><code>const testProps = hasRequiredProps(["name", "date"]);
-   if (testProps(userConfiguration)) {
-     // Stuff
-   }</code></pre>
+    <pre class="prettyprint"><code>// normalizeClassString(['button', isPrimary &amp;&amp; 'is-primary', 'large'])
+  // -> "button is-primary large" or "button large"
+  
+  // normalizeClassString({ button: true, 'is-active': isActive })
+  // -> "button is-active" or "button"</code></pre>
 
 
 
@@ -224,13 +231,19 @@
 
         <tr>
             
-                <td class="name"><code>required</code></td>
+                <td class="name"><code>classes</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;String></span>
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type">String</span>
 
 
 
@@ -241,7 +254,7 @@
 
             
 
-            <td class="description last"><p>Array of properties to check for</p></td>
+            <td class="description last"><p>The classes to process.</p></td>
         </tr>
 
     
@@ -267,7 +280,7 @@
 
         
 <div class="param-desc">
-    <p>Function for user to use to test, fn(object) returns boolean whether all properties are set</p>
+    <p>A space-separated class string.</p>
 </div>
 
 
@@ -278,7 +291,7 @@
     </dt>
     <dd>
         
-<span class="param-type">function</span>
+<span class="param-type">String</span>
 
 
 
@@ -294,7 +307,7 @@
 
     
 
-    <h4 class="name" id=".includeIf"><span class="type-signature type-signature-static">(static) </span>includeIf<span class="signature">(cond, value)</span><span class="type-signature"> &rarr; {Object|Array}</span></h4>
+    <h4 class="name" id=".normalizeClasses"><span class="type-signature type-signature-static">(static) </span>normalizeClasses<span class="signature">(inputClasses)</span><span class="type-signature"> &rarr; {Set}</span></h4>
 
     
 
@@ -304,17 +317,17 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li><p>Returns an object or array if the condition is truthy, otherwise returns a new empty array or object.</p>
+    <dd class="tag-description"><ul class="dummy"><li><p>Helper function to process various Vue like class binding types</p>
 <ul>
-<li>Primary use is for keeping configuration objects clean adding conditions inline</li>
-<li>Useful for conditionally adding properties to an object or elements to an array via spreading.</li>
+<li>Used for modifiers</li>
+<li>Handles same structure as Vue class bindings</li>
 </ul></li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="object.js.html">object.js</a>, <a href="object.js.html#line46">line 46</a>
+        <a href="templating.js.html">templating.js</a>, <a href="templating.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -359,23 +372,6 @@
 
 
 
-    <h5 class="h5-examples">Examples</h5>
-    
-    <pre class="prettyprint"><code>// Conditionally add properties to an object
-const config = {
-  name: "My App",
-  ...includeIf(isAdmin, { canDelete: true })
-};</code></pre>
-
-    <pre class="prettyprint"><code>// Conditionally add elements to an array in a config
-const settings = {
-  plugins: [
-    "plugin-a",
-    ...includeIf(isPro, ["plugin-pro-b", "plugin-pro-c"])
-  ]
-};</code></pre>
-
-
 
 
     <h5 class="h5-parameters">Parameters:</h5>
@@ -403,31 +399,7 @@ const settings = {
 
         <tr>
             
-                <td class="name"><code>cond</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">*</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The condition to evaluate.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>value</code></td>
+                <td class="name"><code>inputClasses</code></td>
             
 
             <td class="type">
@@ -437,6 +409,9 @@ const settings = {
 |
 
 <span class="param-type">Array</span>
+|
+
+<span class="param-type">String</span>
 
 
 
@@ -447,7 +422,7 @@ const settings = {
 
             
 
-            <td class="description last"><p>The object or array to return if the condition is truthy.</p></td>
+            <td class="description last"></td>
         </tr>
 
     
@@ -473,7 +448,7 @@ const settings = {
 
         
 <div class="param-desc">
-    <p>Returns <code>value</code> if <code>cond</code> is truthy, otherwise returns <code>[]</code> if <code>value</code> was an array, or <code>{}</code>.</p>
+    <p>Set of unique classnames</p>
 </div>
 
 
@@ -484,10 +459,497 @@ const settings = {
     </dt>
     <dd>
         
-<span class="param-type">Object</span>
-|
+<span class="param-type">Set</span>
 
-<span class="param-type">Array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".optional"><span class="type-signature type-signature-static">(static) </span>optional<span class="signature">(value, fallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Returns a value if it is truthy, otherwise returns a fallback.
+A simpler version of <code>when()</code> for template literals where you only need to output a value as-is.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="templating.js.html">templating.js</a>, <a href="templating.js.html#line97">line 97</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>// Optional class name
+  const className = `item ${optional(activeClass)}`;
+  
+  // Providing a default for an optional name
+  const displayName = `Welcome, ${optional(user.name, "Guest")}!`;</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The value to check.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>""</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The value to return if <code>value</code> is falsy. Defaults to an empty string.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The <code>value</code> if it's truthy, otherwise the <code>fallback</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".when"><span class="type-signature type-signature-static">(static) </span>when<span class="signature">(cond, callback, fallback<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li><p>Conditionally executes a callback, ideal for logic within template literals.
+If the condition is truthy, the callback is executed and its result is returned.
+Otherwise, the fallback value is returned.</p></li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="templating.js.html">templating.js</a>, <a href="templating.js.html#line80">line 80</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const user = { name: "Joe" };
+  const guest = null;
+   
+  // Example with a truthy condition:
+  const welcomeUser = `&lt;div>${when(user, u => `Welcome, ${u.name}`)}...`;
+  // welcomeUser is "&lt;div>Welcome, Joe..."
+ 
+  // Example with a falsy condition and a custom fallback:
+  const welcomeGuest = `&lt;div>${when(guest, g => `Welcome, ${g.name}`, "Welcome, Guest!")}&lt;/div>`;
+  // welcomeGuest is "&lt;div>Welcome, Guest!&lt;/div>"</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cond</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The condition to evaluate.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>Function to execute if <code>cond</code> is truthy. It receives <code>cond</code> as its argument.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fallback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>""</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Value to return if <code>cond</code> is falsy. Defaults to an empty string.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The result of <code>callback(cond)</code> if <code>cond</code> is truthy, otherwise the <code>fallback</code> value.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
 
 
 
