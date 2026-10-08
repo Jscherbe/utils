@@ -144,4 +144,19 @@ export function preventScroll({ preventShift, container }: {
     container?: HTMLElement;
     preventShift?: boolean;
 }): Function;
+/**
+ * Smoothly scrolls an element into view and waits for the scroll animation to complete.
+ * - Uses a passive scroll debounce to detect when scrolling has finished. Resolves
+ *   immediately if the element is already in view.
+ * - This is needed because older and some current browsers have synchronous API
+ *   for this method. Newer browsers like Chrome now return Promise so this is just
+ *   fallback/polyfill.
+ * - Todo: Update this to use the native `scrollend` event after 2027 (that would be
+ *   4.5 years of scrollend support). Note this may be unneeded then (note above)
+ *
+ * @param {HTMLElement} el The element to scroll to.
+ * @param {ScrollIntoViewOptions} [options={ behavior: "smooth", block: "center" }] Options passed to scrollIntoView.
+ * @returns {Promise} A promise that resolves when the scroll is complete.
+ */
+export function scrollIntoViewAsync(el: HTMLElement, options?: ScrollIntoViewOptions): Promise<any>;
 //# sourceMappingURL=dom.d.ts.map

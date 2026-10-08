@@ -12,12 +12,13 @@ export function isBetween(number: number, min: number, max: number): number;
 /**
  * Get the average of numbers
  * @param  {...Number} numbers Numbers to get the average of (use spread to use with array)
- * @returns
+ * @returns {Number}
  */
 export function average(...numbers: number[]): number;
 /**
  * Get the summation of numbers
  * @param {...Number} numbers Numbers to be added (use spread to use with array)
+ * @returns {Number}
  */
 export function sum(...numbers: number[]): number;
 //# sourceMappingURL=number.d.ts.map
